@@ -1,10 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<% 
+	String path = request.getContextPath();
+	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+    
 <html>
 <head>
 <title>Home</title>
 <!-- Custom Theme files -->
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="<%=path%>/css/style.css" rel="stylesheet" type="text/css" media="all"/>
 <!-- Custom Theme files -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -16,16 +22,13 @@
 <!--Google Fonts-->
 </head>
 
-<% 
-	String path = request.getContextPath();
-	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
+
 <body>
 <div class="login">
 	<h2>BuySmart</h2>
 	<div class="login-top">
 		<h1>用户登录</h1>
-		<form action="<%=path %>/HandleLogin" method="post">
+		<form action="<%=path%>/HandleLogin" method="post">
 			<input type="text" name="userId" value="用户名" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '用户名';}">
 			<input type="password" name="password" value="******" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '密码';}">	    
 	    	<div class="forgot">
