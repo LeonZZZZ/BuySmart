@@ -25,8 +25,7 @@
 	<h2>BuySmart</h2>
 	<div class="login-top">
 		<h1>
-		<%=
-			request.getAttribute("loginResult")%>
+		<%= request.getAttribute("loginResult")%>
 		</h1>
 	</div>
 		<div class="login-bottom">

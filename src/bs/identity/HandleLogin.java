@@ -10,10 +10,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.jasper.tagplugins.jstl.core.Out;
 
 import com.mysql.jdbc.PreparedStatement;
+import com.sun.org.apache.regexp.internal.recompile;
 
 import bs.db.DbClose;
 import bs.db.DbConn;
@@ -41,6 +43,9 @@ public class HandleLogin extends HttpServlet{
 		int loginResult = loginVerify(userId, password);
 		if(loginResult==1){
 			//go to dashboard
+			HttpSession session = req.getSession();
+            session.setAttribute("userFullName", getUserFullName(userId));
+			req.getRequestDispatcher("/jsp/request/request_history.jsp").forward(req, resp);
 		}else{
 			//return to login in page and give reason
 			System.out.println(loginResult);
@@ -76,6 +81,35 @@ public class HandleLogin extends HttpServlet{
 			}
 		}
 	}
+	
+	private String getUserFullName(String userName){
+		ResultSet rs = null;
+		java.sql.PreparedStatement pstmt = null;
+		Connection conn = DbConn.getConn();
+		String sql="select * from user where userName=?"; 
+		
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, userName);
+			rs=pstmt.executeQuery(); 
+			
+			if(rs.next()){
+				String fullName = rs.getString("lastName") + rs.getString("firstName");
+				return fullName;
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			DbClose.allClose(pstmt, rs, conn);
+		} 
+		
+		
+		return "User";
+	}
+	
 	
 	private int loginVerify(String userName, String password){
 		ResultSet rs = null;
