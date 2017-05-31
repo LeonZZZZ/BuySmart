@@ -45,7 +45,7 @@ public class HandleLogin extends HttpServlet{
 			//go to dashboard
 			HttpSession session = req.getSession();
             session.setAttribute("userFullName", getUserFullName(userId));
-			req.getRequestDispatcher("/jsp/request/request_history.jsp").forward(req, resp);
+			req.getRequestDispatcher("/jsp/dashboard/dashboard.jsp").forward(req, resp);
 		}else{
 			//return to login in page and give reason
 			System.out.println(loginResult);
