@@ -2,7 +2,7 @@
 //环形图
 (function(){
 	
-var pie1 = echarts.init(document.getElementById("pie1"));
+var pie1 = echarts.init(document.getElementById("pie3"));
 
 option = {
 	
@@ -128,7 +128,7 @@ pie2.setOption(option);
 //饼状图
 (function(){
 	
-var pie3 = echarts.init(document.getElementById("pie3"));
+var pie3 = echarts.init(document.getElementById("pie1"));
 
 option = {
     title : {

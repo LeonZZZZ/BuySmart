@@ -16,7 +16,8 @@ a{text-decoration:none;}
 .clear{clear:both;}/* clear float */
 .pos-relative{position:relative;}/* Position Relative */
 .pos-absolute{position:absolute;}/* Position Absolute */
-.vertical-base{	vertical-align:baseline;}/* vertical align baseline */
+.vertical-bottom{	vertical-align:bottom;}/* vertical align baseline */
+.vertical-middle{	vertical-align:middle;}/* vertical align baseline */
 .vertical-top{	vertical-align:top;}/* vertical align top */
 .underline{	padding-bottom:5px;	border-bottom: 1px solid #eee; margin:0 0 20px 0;}/* Add 5px bottom padding and a underline */
 nav.vertical ul li{	display:block;}/* vertical menu */

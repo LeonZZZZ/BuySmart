@@ -1301,6 +1301,13 @@ table.dataTable td.focus {
   margin-left: 80px;
   min-height: 77px;
 }
+
+.widget-chart-1 .widget-detail-2 {
+  text-align: right;
+  margin-left: 80px;
+  min-height: 77px;
+}
+
 .widget-box-2 .widget-detail-2 {
   text-align: right;
 }

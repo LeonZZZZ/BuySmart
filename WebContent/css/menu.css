@@ -46,6 +46,8 @@
     margin-left: 44px;
 }
 
+
+
 .am-navbar-default .am-navbar-left {
     padding-left: 10px;
 }
@@ -317,7 +319,7 @@ a:hover {
 
 
 
-@media screen and (max-width: 641px) { /*当屏幕尺寸小于600px时，应用下面的CSS样式*/
+@media screen and (max-width: 641px) { /*褰撳睆骞曞昂瀵稿皬浜�600px鏃讹紝搴旂敤涓嬮潰鐨凜SS鏍峰紡*/
   .am-topbar{
   	background: #fff;
   }
